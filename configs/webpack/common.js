@@ -30,7 +30,28 @@ module.exports = {
         ]
       },
       {
+        test: /\.m(odule)?\.s(c|a)ss$/,
+        loaders: [
+          "style-loader",
+          {
+            loader: "typings-for-css-modules-loader",
+            options: {
+              camelCase: true,
+              importLoaders: 2,
+              localIdentName: "[name]__[local]--[hash:base64:5]",
+              minimize: false,
+              modules: true,
+              namedExport: true,
+              sourceMap: true
+            }
+          },
+          "postcss-loader",
+          "sass-loader"
+        ]
+      },
+      {
         test: /\.s(c|a)ss$/,
+        exclude: /\.module\.s(c|a)ss$/,
         loaders: [
           "style-loader",
           { loader: "css-loader", options: { importLoaders: 1 } },
@@ -50,7 +71,7 @@ module.exports = {
   plugins: [
     new CheckerPlugin(),
     new StyleLintPlugin(),
-    new HtmlWebpackPlugin({ template: "index.html.ejs" }),
+    new HtmlWebpackPlugin({ template: "index.html.ejs" })
   ],
   externals: {
     react: "React",
