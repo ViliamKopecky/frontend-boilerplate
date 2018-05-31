@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as styles from './../assets/scss/App.module.sass'
+import * as styles from './../styles/App.module.sass'
 
-const reactLogo = require('./../assets/img/react_logo.svg')
+const reactLogo = require('./../images/react_logo.svg')
 
 export interface AppProps {}
 

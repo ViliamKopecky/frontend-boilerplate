@@ -71,7 +71,7 @@ module.exports = (stage) => ({
 	plugins: [
 		new CheckerPlugin(),
 		new StyleLintPlugin(),
-		new HtmlWebpackPlugin({ template: 'index.html.ejs' }),
+		new HtmlWebpackPlugin({ template: 'index.pug' }),
 	],
 	externals: {
 		react: 'React',
