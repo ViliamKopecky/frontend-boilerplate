@@ -26,14 +26,14 @@
 		"build": "npm run clean-dist && webpack -p --config=configs/webpack/prod.js",
 		"clean-dist": "rm -f -r -d dist",
 		"lint": "npm run lint:ts && npm run lint:sass",
-		"lint:ts": "tslint \"./src/**/*.ts*\" -e \"./src/**/*.module.sass.d.ts*\" --format stylish --force",
-		"lint:ts:fix": "tslint \"./src/**/*.ts*\" -e \"./src/**/*.module.sass.d.ts*\" --format stylish --force --fix",
+		"lint:ts": "tslint \"./{src,configs}/**/*.{j,t}s*\" -e \"./src/**/*.module.sass.d.{j,t}s*\" --format stylish --force",
+		"lint:ts:fix": "tslint \"./{src,configs}/**/*.{j,t}s*\" -e \"./src/**/*.module.sass.d.{j,t}s*\" --format stylish --force --fix",
 		"lint:sass": "stylelint \"./src/**/*.s{a,c}ss\"",
 		"start": "npm run start-dev",
 		"start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
 		"start-prod": "npm run build && node express.js",
 		"test": "jest --watch --coverage --config=configs/jest.json",
-		"prettier": "prettier --write \"{./,./src/**/}*.{ts,tsx,js,jsx}\""
+		"prettier": "prettier --write \"{./,./{src,configs}/**/}*.{ts,tsx,js,jsx}\""
 	},
 	"devDependencies": {
 		"@types/jest": "^22.2.3",
