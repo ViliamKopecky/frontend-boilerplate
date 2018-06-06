@@ -1,9 +1,9 @@
 // development config
-const merge = require('webpack-merge')
-const webpack = require('webpack')
-const commonConfig = require('./common')('development')
+import merge from 'webpack-merge'
+import webpack from 'webpack'
+import common from './common'
 
-module.exports = merge(commonConfig, {
+export default merge(common('development'), {
 	mode: 'development',
 	entry: [
 		'react-hot-loader/patch', // activate HMR for React

@@ -1,10 +1,10 @@
 // shared config (dev and prod)
-const { resolve } = require('path')
-const { CheckerPlugin } = require('awesome-typescript-loader')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import { resolve } from 'path'
+import { CheckerPlugin } from 'awesome-typescript-loader'
+import StyleLintPlugin from 'stylelint-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-module.exports = (stage) => ({
+export default (stage) => ({
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx', '.pug'],
 	},

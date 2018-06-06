@@ -1,5 +1,5 @@
-import * as React from 'react'
-import * as styles from './../styles/App.module.sass'
+import React from 'react'
+import styles from './../styles/App.module.sass'
 
 const reactLogo = require('./../images/react_logo.svg')
 

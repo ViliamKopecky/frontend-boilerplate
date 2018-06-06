@@ -1,11 +1,11 @@
 // production config
-const merge = require('webpack-merge')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const { resolve } = require('path')
+import merge from 'webpack-merge'
+import ManifestPlugin from 'webpack-manifest-plugin'
+import { resolve } from 'path'
 
-const commonConfig = require('./common')('production')
+import common from './common'
 
-module.exports = merge(commonConfig, {
+export default merge(common('production'), {
 	mode: 'production',
 	entry: './index.tsx',
 	output: {
